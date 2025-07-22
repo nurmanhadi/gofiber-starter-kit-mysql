@@ -66,3 +66,23 @@ remove folder `.git` in project root after clone repository. after remove, you c
 rm -rf .git
 git init
 ```
+
+#### 4. Rename module `go.mod`
+
+before
+
+```mod
+module gofiber-starterkit-mysql
+```
+
+after
+
+```mod
+module your-module
+```
+
+run command:
+
+```bash
+go mod tidy
+```

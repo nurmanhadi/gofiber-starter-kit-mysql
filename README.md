@@ -36,8 +36,17 @@ ready setup
 └── test
 ```
 
-## ENV 
-build file `.env`
+## INSTALLATION
+
+#### 1. Clone Repository
+
+```bash
+git clone https://github.com/nurmanhadi/gofiber-starter-kit-mysql.git
+```
+
+#### 2. Create ENV file
+
+create file `.env`
 
 ```bash
 APP_NAME="your app"
@@ -47,4 +56,13 @@ DB_POOL_MAX_IDLE_CONNS=5
 DB_POOL_MAX_OPEN_CONNS=15
 DB_POOL_MAX_IDLE_TIME=10 # minute
 DB_POOL_MAX_LIFETIME=30 # minute
+```
+
+#### 3. Remove folder .git
+
+remove folder `.git` in project root after clone repository. after remove, you can new init `git init`
+
+```bash
+rm -rf .git
+git init
 ```

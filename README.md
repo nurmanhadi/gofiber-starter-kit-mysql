@@ -1,22 +1,26 @@
-# GOFIBER STARTERKIT MYSQL
-ready setup
+# 🚀 GoFiber Starterkit with MySQL
 
-## Project Structure
+A ready-to-use starterkit for building REST APIs using [GoFiber](https://gofiber.io) and MySQL.  
+It provides a clean architecture structure, validation, logging, and database connection setup to help you focus on your business logic.
 
-```bash
+---
+
+## 📁 Project Structure
+
+```
 ├── cmd
-│   └── main.go
-├── config
+│   └── main.go                          # Application entry point
+├── config                               # App configurations
 │   ├── app.go
-│   ├── environtment.go
+│   ├── environment.go
 │   ├── fiber.go
 │   ├── logrus.go
 │   ├── mysql.go
 │   └── validator.go
-├── Dockerfile
+├── Dockerfile                           # Docker setup
 ├── go.mod
 ├── go.sum
-├── internal
+├── internal                             # Clean architecture layout
 │   ├── domain
 │   │   └── example
 │   │       ├── dto
@@ -32,57 +36,111 @@ ready setup
 │           └── routes
 │               └── route.go
 ├── pkg
-│   └── response_status_exception.go
-└── test
+│   └── response_status_exception.go     # Utility helpers
+└── test                                 # Unit tests
 ```
 
-## INSTALLATION
+---
 
-#### 1. Clone Repository
+## ✅ Features
+
+- ⚡ [Fiber](https://gofiber.io) framework (fast & lightweight)
+- 🐬 ORM [Gorm](https://gorm.io) and MySQL with connection pooling
+- 🔍 Input validation with [validator](https://pkg.go.dev/github.com/go-playground/validator/v10)
+- 📦 Modular clean architecture
+- 🐳 Docker ready
+- 📄 Auto JSON response [formatter](https://pkg.go.dev/github.com/goccy/go-json)
+- 🧪 Ready for unit testing
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/nurmanhadi/gofiber-starter-kit-mysql.git
+cd gofiber-starter-kit-mysql
 ```
 
-#### 2. Create ENV file
+---
 
-create file `.env`
+### 2. Create `.env` File
 
-```bash
-APP_NAME="your app"
+Create a `.env` file in the root directory:
+
+```dotenv
+APP_NAME="Your App Name"
 
 DB_MYSQL_URL="username:password@tcp(localhost:3306)/yourdb?charset=utf8mb4&parseTime=True&loc=Local"
 DB_POOL_MAX_IDLE_CONNS=5
 DB_POOL_MAX_OPEN_CONNS=15
-DB_POOL_MAX_IDLE_TIME=10 # minute
-DB_POOL_MAX_LIFETIME=30 # minute
+DB_POOL_MAX_IDLE_TIME=10    # in minutes
+DB_POOL_MAX_LIFETIME=30     # in minutes
 ```
 
-#### 3. Remove folder .git
+---
 
-remove folder `.git` in project root after clone repository. after remove, you can new init `git init`
+### 3. Remove Git History & Reinitialize
 
 ```bash
 rm -rf .git
 git init
 ```
 
-#### 4. Rename module `go.mod`
+---
 
-before
+### 4. Rename Module in `go.mod`
 
-```mod
+Edit the `go.mod` file:
+
+**Before:**
+```go
 module gofiber-starterkit-mysql
 ```
 
-after
-
-```mod
-module your-module
+**After:**
+```go
+module github.com/yourusername/your-project
 ```
 
-run command:
+Then run:
 
 ```bash
 go mod tidy
 ```
+
+---
+
+## 🐳 Run with Docker
+
+```bash
+docker build -t gofiber-app .
+docker run -p 3000:3000 --env-file .env gofiber-app
+```
+
+---
+
+## 📮 Example Endpoint
+
+`GET /`
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome!  
+Feel free to fork and customize this starterkit for your own projects.
+
+---
+
+## 📝 License
+
+MIT License. Use, modify, and distribute as needed.
+
+---
+
+## 👤 Author
+
+Muhammad Nurman Hadi  
+GitHub: [@nurmanhadi](https://github.com/nurmanhadi)

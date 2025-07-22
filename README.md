@@ -101,7 +101,7 @@ module gofiber-starterkit-mysql
 
 **After:**
 ```go
-module github.com/yourusername/your-project
+module your-module
 ```
 
 Then run:
@@ -109,6 +109,8 @@ Then run:
 ```bash
 go mod tidy
 ```
+
+finnaly you can chnage `import path`
 
 ---
 

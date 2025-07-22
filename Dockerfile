@@ -7,6 +7,5 @@ RUN go build -o /app/build/app /app/cmd/main.go
 FROM alpine:latest
 WORKDIR /app
 COPY --from=builder /app/build/app /app/build/app
-COPY .env.production .
 EXPOSE 3000
 CMD [ "./build/app" ]
